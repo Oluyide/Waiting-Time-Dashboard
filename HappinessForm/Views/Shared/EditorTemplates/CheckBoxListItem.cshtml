@@ -1,0 +1,7 @@
+﻿@model HappinessForm.Models.CheckBoxListItem
+<div>
+@Html.HiddenFor(x => x.ID)
+@Html.CheckBoxFor(x => x.IsChecked, new { @class = "checkbox-inline" })
+@Html.LabelFor(x => x.IsChecked, Model.Display, new { @class = "checkbox-inline" })
+<br />
+</div>

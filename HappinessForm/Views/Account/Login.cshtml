@@ -1,0 +1,100 @@
+﻿@using HappinessForm.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+   <title>Patient Satisfaction</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    
+    <link href="~/Content/login/css/style.css" rel="stylesheet" />
+</head>
+<body style="background-image: url(../asset2/images/IMG_6740.JPG);";>
+    <div class="col-sm-12 text" style="background-color:#0e248e">
+        <div class="col-sm-8 col-sm-offset-3 text"  style="background-color:#0e248e">
+            <h1><img src="~/asset2/images/LH_logo.png" />  Patients' Satisfaction Form</h1>
+            <div class="description">
+                @*<p>
+                        Patient Satisfaction Form
+                    </p>*@
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="info">
+            <h2>@*Patients' Satisfaction Survey Form*@</h2>@*<span>Courtesy<i class="fa"></i> IT Department<a href="http://andytran.me"></a></span>*@
+        </div>
+    </div>
+    <div class="form row">
+        <div style="background-color:#0e248e">
+            <img src="~/asset2/images/LH_logo.png" />
+        </div>
+        <br />
+           
+
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+               
+                <div class="col-md-12">
+                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email", @class = "form-control input-sm " })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+               
+                <div class="col-md-12">
+                    @Html.PasswordFor(m => m.Password, new { @placeholder = "Password", @class = "form-control  input-sm " })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+                    @*<div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                    </div>*@
+                    @*<div class="form-group">*@
+                        @*<div class="col-md-offset-2 col-md-10">*@
+                            <input type="submit" value="Log in" class="button" style="background-color:#0e248e"/>
+                        @*</div>*@
+                    @*</div>*@
+                    @*<p>
+                        @Html.ActionLink("Register as a new user", "Register")
+                    </p>*@
+                    @* Enable this once you have account confirmation enabled for password reset functionality
+                        <p>
+                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                        </p>*@
+        }
+
+    </div>
+
+    <div class="container">
+        <div class="info">
+           <span>Courtesy<i class="fa"></i> IT Department<a href="http://andytran.me"></a></span>
+            <p>&copy; @DateTime.Now.Year - Lagoon Hospitals</p>
+        </div>
+    </div>
+
+    <video id="video" autoplay="autoplay" loop="loop" poster="polina.jpg">
+        <source src="http://andytran.me/A%20peaceful%20nature%20timelapse%20video.mp4" type="video/mp4" />
+    </video>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+   
+    <script src="~/Content/login/js/index.js"></script>
+</body>
+</html>

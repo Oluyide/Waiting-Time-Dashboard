@@ -1,0 +1,387 @@
+﻿
+@*@{
+    Layout = null;
+}*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Happy</title>
+
+    <link rel="stylesheet" type="text/css" href="asset2/plugins/jquery.steps/css/jquery.steps.css" />
+
+    <link href="asset2/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="asset2/css/core.css" rel="stylesheet" type="text/css" />
+    <link href="asset2/css/components.css" rel="stylesheet" type="text/css" />
+    <link href="asset2/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="asset2/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="asset2/css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="asset2/js/modernizr.min.js"></script>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-box">
+                <h4 class="m-t-0 header-title"><b>Vertical Steps Example</b></h4>
+                <p class="text-muted m-b-30 font-13">
+                    Use the button classes on an <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, or <code>&lt;input&gt;</code> element.
+                </p>
+
+                <form id="wizard-vertical">
+                    <h3>Account</h3>
+                    <section>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-2 control-label " for="userName1">User name *</label>
+                            <div class="col-lg-10">
+                                <input class="form-control required" id="userName1" name="userName" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-2 control-label " for="password1"> Password *</label>
+                            <div class="col-lg-10">
+                                <input id="password1" name="password" type="text" class="required form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-2 control-label " for="confirm1">Confirm Password *</label>
+                            <div class="col-lg-10">
+                                <input id="confirm1" name="confirm" type="text" class="required form-control">
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-12 control-label ">(*) Mandatory</label>
+                        </div>
+                    </section>
+                    <h3>Profile</h3>
+                    <section>
+                        <div class="form-group clearfix">
+
+                            <label class="col-lg-2 control-label" for="name1"> First name *</label>
+                            <div class="col-lg-10">
+                                <input id="name1" name="name" type="text" class="required form-control">
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-2 control-label " for="surname1"> Last name *</label>
+                            <div class="col-lg-10">
+                                <input id="surname1" name="surname" type="text" class="required form-control">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-2 control-label " for="email1">Email *</label>
+                            <div class="col-lg-10">
+                                <input id="email1" name="email" type="text" class="required email form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-2 control-label " for="address1">Address *</label>
+                            <div class="col-lg-10">
+                                <input id="address1" name="address" type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-12 control-label ">(*) Mandatory</label>
+                        </div>
+
+                    </section>
+                    <h3>Hints</h3>
+                    <section>
+                        <div class="form-group clearfix">
+                            <div class="col-lg-12">
+                                <ul class="list-unstyled w-list">
+                                    <li><b>First Name :</b> Jonathan </li>
+                                    <li><b>Last Name :</b> Smith </li>
+                                    <li><b>Emial:</b> jonathan@smith.com</li>
+                                    <li><b>Address:</b> 123 Your City, Cityname. </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <h3>Finish</h3>
+                    <section>
+                        <div class="form-group clearfix">
+                            <div class="col-lg-12">
+                                <div class="checkbox checkbox-primary">
+                                    <input id="checkbox-v" type="checkbox">
+                                    <label for="checkbox-v"> I agree with the Terms and Conditions. </label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </form>
+                <!-- End #wizard-vertical -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+            var resizefunc = [];
+    </script>
+
+    <!-- jQuery  -->
+    <script src="asset2/js/jquery.min.js"></script>
+    <script src="asset2/js/bootstrap.min.js"></script>
+    <script src="asset2/js/detect.js"></script>
+    <script src="asset2/js/fastclick.js"></script>
+    <script src="asset2/js/jquery.slimscroll.js"></script>
+    <script src="asset2/js/jquery.blockUI.js"></script>
+    <script src="asset2/js/waves.js"></script>
+    <script src="asset2/js/wow.min.js"></script>
+    <script src="asset2/js/jquery.nicescroll.js"></script>
+    <script src="asset2/js/jquery.scrollTo.min.js"></script>
+
+
+    <script src="asset2/js/jquery.core.js"></script>
+    <script src="asset2/js/jquery.app.js"></script>
+
+    <!--Form Wizard-->
+    <script src="asset2/plugins/jquery.steps/js/jquery.steps.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="asset2/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+
+    <!--wizard initialization-->
+    <script src="asset2/pages/jquery.wizard-init.js" type="text/javascript"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+<body>
+    <!-- Top menu -->
+    <nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Lagoon HOSPITAL</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="top-navbar-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <span class="li-text">
+                            @*Put some text or*@
+                        </span>
+                        <a href="#"><strong>@*links*@</strong></a>
+                        <span class="li-text">
+                            @*here, or some icons:*@
+                        </span>
+                        <span class="li-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-envelope"></i></a>
+                            <a href="#"><i class="fa fa-skype"></i></a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Top content -->
+    <div class="top-content">
+
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1>@*<strong>Lagoon Hospital</strong>*@  Patients Satisfaction Form</h1>
+                        <div class="description">
+                            @*<p>
+                                    Patient Satisfaction Form
+                                </p>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Your Happiness Our Concern.....</h3>
+                                <p>Fill in the form below to rate our services</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom contact-form">
+
+                            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                            {
+                                <fieldset>
+                                    <legend>Personal Info</legend>
+                                    <div class="form-group col-md-12 col-lg-12 col-sm-12">
+                                        @Html.Label("Full Name")
+                                        @Html.TextBoxFor(x => x.Name, new { @placeholder = "Full Name", @class = "form-control", @id = "contact-email", required = "" })
+                                        @*<input type="text" name="email" placeholder="Email..." class="contact-email form-control" id="contact-email">*@
+                                    </div>
+                                    <div class="form-group col-md-4 col-sm-4">
+                                        @Html.Label("Date")
+                                        @Html.TextBoxFor(x => x.DateOfVisit, "{0:dd/MM/yyyy}", new { @placeholder = "Date", @class = "form-control", @id = "dateofVisit", required = "" })
+                                        @*<input type="text" name="subject" placeholder="Subject..." class="contact-subject form-control" id="contact-subject">*@
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        @Html.Label("Time In")
+                                        @Html.TextBoxFor(x => x.TimeIn, new { @placeholder = "TimeIn", @class = "form-control", @id = "TimeIn", required = "" })
+                                    </div>
+                                    <div class="form-group; col-md-4">
+                                        @Html.Label("Time Out")
+                                        @Html.TextBoxFor(x => x.TimeOut, new { @placeholder = "TimeOut", @class = "form-control", @id = "TimeOut", required = "" })
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        @Html.Label("Company")
+                                        @Html.TextBoxFor(x => x.Company, new { @placeholder = "Company", @class = "form-control", @id = "", required = "" })
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        @Html.Label("Encounter Number")
+                                        @Html.TextBoxFor(x => x.EncounterNo, new { @placeholder = "EncounterNo", @class = "form-control", @id = "", required = "" })
+                                    </div>
+
+                                    <div class="form-group; col-md-6">
+                                        @Html.LabelFor(model => model.PlanList)
+                                        @Html.DropDownListFor(model => model.PlanCategoryId, Model.PlanList, new { @placeholder = "EncounterNo", @class = "form-control", @id = "" })
+                                    </div>
+
+                                    <div class="form-group; col-md-6">
+                                        @Html.LabelFor(model => model.ClinicList)
+                                        @Html.DropDownListFor(model => model.ClinicId, Model.ClinicList, new { @placeholder = "EncounterNo", @class = "form-control", @id = "" })
+                                    </div>
+
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Please Rate our Services</legend>
+
+                                    <div class="form-group col-md-3 col-sm-3">
+                                        @Html.LabelFor(model => model.FrontDeskName, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(x => x.FrontDeskName, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.FrontDeskRating, Model.FrontDeskRate)
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.VitalSignsRate, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(model => model.VitalSigns, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.VitalSignsRating, Model.VitalSignsRate, new { @placeholder = "Name of staff if you know?", @class = "form-group", @id = "" })
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.Consultations, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(model => model.Consultations, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.ConsultationsRating, Model.ConsultationsRate, new { @placeholder = "Name of staff if you know?", @class = "form-group", @id = "" })
+                                    </div>
+
+
+
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.Phamarcy, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(x => x.Phamarcy, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.PharmarcyRating, Model.PharmacyRate, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.LabRate, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(model => model.Lab, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.LabRating, Model.LabRate, new { @placeholder = "Name of staff if you know?", @class = "form-group", @id = "" })
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.XRays, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(model => model.XRays, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.XRaysRating, Model.xRaysRate, new { @placeholder = "Name of staff if you know?", @class = "form-group", @id = "" })
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.ECG, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(model => model.ECG, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.ECGRating, Model.ECGRate, new { @placeholder = "Name of staff if you know?", @class = "form-group", @id = "" })
+                                    </div>
+
+
+
+
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.ScanUltrasound, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(model => model.ScanUltrasound, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.ScanRating, Model.ScanRate, new { @placeholder = "Name of staff if you know?", @class = "form-group", @id = "" })
+                                    </div>
+
+
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.Echocardiograpy, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(model => model.Echocardiograpy, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.echoRating, Model.EChocaardiograhyRate, new { @class = "form-group", @id = "" })
+                                    </div>
+
+
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.Billing, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(model => model.Billing, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.BillingRating, Model.BillingRate, new { @class = "form-group", @id = "" })
+                                    </div>
+
+
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.CTScan, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(model => model.CTScan, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.CTScanRating, Model.CTScanRates, new { @class = "form-group", @id = "" })
+                                    </div>
+
+
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.MRI, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(model => model.MRI, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.MRIRating, Model.MRIRates, new { @class = "form-group", @id = "" })
+                                    </div>
+
+
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.ERTreatmentRoom, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(model => model.ERTreatmentRoom, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.ERRating, Model.ERTreamentRates, new { @class = "form-group", @id = "" })
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.Others, new { @class = "form-group", @id = "" })
+                                        @Html.TextBoxFor(model => model.Others, new { @placeholder = "Name of staff if you know", @class = "form-group", @id = "" })
+                                        @Html.DropDownListFor(model => model.OthersRating, Model.OthersRate, new { @class = "form-group", @id = "" })
+                                    </div>
+                                </fieldset>
+                                <div class="form-group col-md-12">
+                                    @Html.Label("Please Indicate the name of one member of staff that best attend to you", new { @placeholder = "Your best staff", @class = "labelcol", @id = "" })
+                                    @Html.TextBoxFor(model => model.YourbestStaff, new { @placeholder = "Your best staff", @class = "form-group col-md-12", @id = "", required = "" })
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    @Html.Label("Comment and Suggestion", new { @placeholder = "Your best staff", @class = "form-group col-md-12", @id = "" })
+                                    @Html.TextAreaFor(model => model.Others, new { @placeholder = "Comment and Suggestion", @class = "form-group col-md-12", @id = "", required = "" })
+                                </div>
+
+                                <center><input type="submit" value="Submit" class="btn btn-primary" /></center>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

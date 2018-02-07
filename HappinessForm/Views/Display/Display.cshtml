@@ -1,0 +1,55 @@
+﻿@model List<HappinessForm.Models.ClinicsModel>
+@{
+    ViewBag.Title = "Display";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<link href="~/assets/css/respect.css" rel="stylesheet" />
+<div class="wrap" >
+    <h2 style="background-color:#12177d">IKOYI<img src="~/asset2/images/LH_logo.png" /><span style="float:right;margin-right:10px"><i>@String.Format("{0:ddd, MMM d,yyyy}",DateTime.Today) <span id="clk"></span></i></span></h2>
+<div class="table">
+        <ul>
+           <li class="col-lg-4">
+                <div class="top purple white">
+                    <h2>Today's Clinics</h2>
+                    @*<div class="circle pink"><i class="fa fa-medkit" style="font-size:12px"></i></div>*@
+                </div>
+                <div class="bottom">
+                    @foreach (var item in Model)
+                    {
+                        <h4><span style="color:black">@item.ClinicsName</span> </h4>
+                    }
+                    
+                </div>
+            </li>
+
+            <li class="col-lg-4">
+                <div class="top white">
+                    <h2>Time</h2>
+                    @*<div class="circle"><i class="fa fa-clock-o" style="font-size:12px"></i></div>*@
+                </div>
+
+                <div class="bottom">
+                    @foreach (var item in Model)
+                    {
+                        <h4><span style="color:black">@item.StartTime - @item.EndTime</span> </h4>
+                    }
+                </div>
+            </li>
+
+            <li class="col-lg-4">
+                <div class="top white">
+                    <h2>Average Waiting Time</h2>
+                    @*<div class="circle"><i class="fa fa-clock-o" style="font-size:12px"></i></div>*@
+                </div>
+
+                <div class="bottom">
+                    @foreach (var item in Model)
+                    {
+                        <h4><span style="color:black">@item.AverageTime Min.</span> </h4>
+                    }
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>

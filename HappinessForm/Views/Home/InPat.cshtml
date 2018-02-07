@@ -1,0 +1,363 @@
+﻿@model HappinessForm.Models.PatientResponseModel
+
+@{
+    ViewBag.Title = "In-Patient";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-3 text">
+        <h1><img src="~/asset2/images/LH_logo.png" />  Patients' Satisfaction Form</h1>
+        <div class="description">
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="card-box">
+            <div class="card-box">
+                <label class="col-lg-2 control-label " for="userName1">Switch to Out-Patient Form</label>
+                <input type="checkbox" checked data-plugin="switchery" data-color="grey" data-size="small" id="Inp" />
+                <h3 style="float:right;color:darkblue" class="col-lg-2 control-label " for="userName1">In Patients' Form</h3>
+            </div>
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @id = "wizard-vertical" }))
+            {
+                @*<form id="wizard-vertical">*@
+                <h3>Personal Details/Emergency</h3>
+                <section>
+
+                    <div class="card-box">
+                        <h4 style="color:darkblue">Personal Details</h4>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-4 control-label " for="userName1">Name *</label>
+                            <div class="col-lg-8">
+                                @Html.TextBoxFor(x => x.Name, new { @placeholder = "Full Name", @class = "form-control  input-sm required", @id = "contact-email", required = "" })
+
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-4 control-label " for="confirm1">Patient ID *</label>
+                            <div class="col-lg-8">
+                                @Html.TextBoxFor(x => x.PatientId, new { @placeholder = "Patient ID", @class = "form-control  input-sm", @id = "", required = "" })
+                                @*<input id="confirm1" name="confirm" type="text" class="required form-control">*@
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-4 control-label " for="confirm1">Room Number *</label>
+                            <div class="col-lg-8">
+                                @Html.TextBoxFor(x => x.RoomNumber, new { @placeholder = "Patient ID", @class = "form-control  input-sm", @id = "", required = "" })
+                                @*<input id="confirm1" name="confirm" type="text" class="required form-control">*@
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-4 control-label " for="confirm1">Admitting doctor *</label>
+                            <div class="col-lg-8">
+                                @Html.TextBoxFor(x => x.AdmittingDoctor, new { @placeholder = "Patient ID", @class = "form-control  input-sm", @id = "", required = "" })
+                                @*<input id="confirm1" name="confirm" type="text" class="required form-control">*@
+                            </div>
+                        </div>
+
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-4 control-label " for="confirm1"> Contact Number *</label>
+                            <div class="col-lg-8">
+                                @Html.TextBoxFor(x => x.ContactNumber, new { @placeholder = "Contact Number", @class = "form-control  input-sm", @id = "", required = "" })
+                                @*<input id="confirm1" name="confirm" type="text" class="required form-control">*@
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-4 control-label " for="password1"> Date *</label>
+                            <div class="col-lg-8">
+                                @Html.TextBoxFor(x => x.DateOfVisit, "{0:dd/MM/yyyy}", new { @placeholder = "Date", @class = "required form-control input-sm ", @id = "datepicker", required = "" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-box">
+                        <h4 style="color:darkblue">Emergency(If Applicable)</h4>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1"> Emergency contact number responsiveness *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.EmergencyContact, Model.EmergencyContactList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Immediate attention and assessment on arrival *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.EmergencyImmediate, Model.EmergencyImmediateList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Overall services at emergency *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.EmergencyOverall, Model.EmergencyOverallList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Lagoon ambulance services *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.EmergencyLagoon, Model.EmergencyLagoonList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                <h3>Admission/Doctor</h3>
+                <section>
+                    <div class="card-box">
+                        <h4 style="color:darkblue">Admission</h4>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Explanation of admission process *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.AdmissionExplanation, Model.AdmissionExplanationList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Quality and promptness of responses to your queries</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.AdmissionQuality, Model.AdmissionQualityList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="us  erName1">Counselling on packages and expected expenses</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.AdmissionCounselling, Model.AdmissionCounsellingList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="us  erName1">Courtesy and responsiveness of admission staff</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.AdmissionCourtesy, Model.AdmissionCourtesyList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card-box">
+                        <h4 style="color:darkblue">Doctor</h4>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Attentiveness, timeliness and quality of care provided *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.InPatDocAttentiveness, Model.InPatDocAttentivenessList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Your involvement in the decisions concerning your treatment *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.InPatInvolment, Model.InPatInvolmentList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="us  erName1">Explanation of your diagnosis an treatment</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.InPatDocExplanation, Model.InPatDocExplanationList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="us  erName1">Regular visits and progress updates</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.InPatDocRegVisit, Model.InPatDocRegVisitList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="us  erName1">Courtesy and compassion demonstrated by the doctor</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.InPatDocCourtesy, Model.InPatDocCourtesyList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <h3>Nursing Experience/Accomodation</h3>
+                <section>
+                    <div class="card-box">
+                        <h4 style="color:darkblue">Nursing Experience</h4>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Timeliness of response to call bell and your queries *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.NursingTimeliness, Model.NursingTimelinessList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Information shared about medication and/or nursing procedures *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.NursingInfo, Model.NursingInfoList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="us  erName1">Quality of care provided by the nurse to alleviate your pain</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.NursingQuality, Model.NursingQualityList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="us  erName1">Courtesy and compassion of the nursing staff</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.NursingCourtesy, Model.NursingCourtesyList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="card-box">
+                        <h4 style="color:darkblue">Accomodation</h4>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Cleanliness and hygiene of room & bathroom *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.AccoCleaniness, Model.AccoCleaninessList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Behaviour and responsiveness of house keeping staff*</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.AccoBehaviour, Model.AccoBehaviourList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <h3>Operation Theatre/ICU</h3>
+                <section>
+                    <div class="card-box">
+                        <h4 style="color:darkblue">Operation Theatre(If Applicable)</h4>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Punctuality in start of surgery *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.OpPunctuality, Model.OpPunctualityList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Timeliness of updates to attendants*</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.OpTimeliness, Model.OpTimelinessList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="us  erName1">Courtesy and responsiveness of operation theatre staff</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.OpCourtesy, Model.OpCourtesyList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-box">
+                        <h4 style="color:darkblue">ICU(If Applicable)</h4>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Attentiveness, promptness and quality of care provided *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.ICUAttentive, Model.ICUAttentiveList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Timeliness of response to your queries and updates received*</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.ICUTimeliness, Model.ICUTimelinessList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="us  erName1">Explanation of diagnosis & treatment</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.ICUExpalnation, Model.ICUExpalnationList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <h3>Discharge/Overall Experience</h3>
+                <section>
+                    <div class="card-box">
+                        <h4 style="color:darkblue">Discharge Experience</h4>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Explanation of overall discharge process *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.DischargeEOD, Model.DischargeEODList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Explanation & timeliness of discharge summary provided *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.DischargeETD, Model.DischargeETDList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="us  erName1">Timeliness and quality of response to queries by billing desk</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.DsichargeTimeliness, Model.DsichargeTimelinessList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="us  erName1">Timeliness and quality of response to queries by TPA desk (If applicable)</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.DischargeTimeTPA, Model.DischargeTimeTPAList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card-box">
+                        <h3 style="color:darkblue">Overall Experience</h3>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">How was your overall experience at our hospital? *</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.OverallHow, Model.OverallHowList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="userName1">Were you treated with dignity and respect?*</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.OverallWere, Model.OverallWereList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="us  erName1">Ease and comfort of finding your way inside the hospital premises</label>
+                            <div class="col-lg-6">
+                               @Html.DropDownListFor(model => model.OverallEase, Model.OverallEaseList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+
+                        <div class="form-group clearfix">
+                            @Html.Label("Comment and Suggestion", new { @placeholder = "Your best staff", @class = "form-group  input-sm ", @id = "" })
+                            @Html.TextAreaFor(model => model.Comment, new { @placeholder = "Comment and Suggestion", @class = "form-control  input-sm required", @id = "", required = "" })
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-lg-6 control-label " for="us  erName1">Will you to recommend us to a friend or family member</label>
+                            <div class="col-lg-6">
+                                @Html.DropDownListFor(model => model.Recommend, Model.RecommendList, new { @placeholder = "Name of staff if you know?", @class = "form-control   input-sm ", @id = "" })
+                            </div>
+                        </div>
+                        <h3 style="color:darkblue">STAFF WHO PROVIDED YOU WITH EXCEPTIONAL SERVICES</h3>
+                        <div class="form-group clearfix">
+                            @Html.Label("Please provide us a with the name(s) of the staff member(s)", new { @placeholder = "Your best staff", @class = "labelcol", @id = "" })
+                            @Html.TextBoxFor(model => model.BestStaff, new { @placeholder = "Your best staff", @class = "form-control col-md-12  input-sm required", @id = "", required = "" })
+                        </div>
+
+                    </div>
+
+                    <div class="form-group newcorp-style">
+                        @*<div class="col-md-4 col-md-offset-1  pull-right ">*@
+                        <div class="col-md-3  pull-right ">
+                            <input type="submit" value="Finish" class="btn btn-primary btn-block ipm" data-perm="CustomersCreate" />
+                        </div>
+                    </div>
+                </section>
+            }
+            @*</form>*@
+            <!-- End #wizard-vertical -->
+        </div>
+    </div>
+</div>

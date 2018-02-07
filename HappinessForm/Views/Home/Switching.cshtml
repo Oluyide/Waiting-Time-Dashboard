@@ -1,0 +1,28 @@
+﻿@model HappinessForm.Models.SwitchingModel
+@{
+    ViewBag.Title = "Switching";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+
+<div class="col-sm-6" style="margin:40px;margin-left:25%">
+        <h2 style="color:darkblue">Patient Type</h2>
+        <div class="card-box">
+            @if (TempData["Pat"] != null)
+            {
+                <p style="color:red">@TempData["Pat"].ToString();</p>
+            }
+            @using (Html.BeginForm("Switching", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "form" }))
+            {
+                <div class="form-group">
+                    <div class="col-md-6">
+                       @Html.DropDownListFor(model => model.Forms, Model.AvailableForms, new { @placeholder = "Email", @class = "form-control input-sm " })
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-default" value="Go" />
+            }
+        </div>
+    </div>
+
+   
